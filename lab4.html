@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BootStrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!------------------->
+
+    <title>Lab 4</title>
+  </head>
+  <body>
+    <!--Jumbotron -->
+    <div class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="display-4">Lab - 4</h1>
+        <p class="lead">Intro to JavaScript</p>
+      </div>
+    </div>
+    <!--End Jumbotron -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CSC 225</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="lab3.html">Lab 3</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="lab4.html"
+                >Lab 4</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--End Navbar -->
+
+    <!--Container Start -->
+    <div class="container">
+      <!-- Lab 4 Content here -->
+      <!-- Card Start -->
+      <div class="container text-center mt-3">
+        <h1 class="display-2" id="name"></h1>
+        <p class="lead">
+          Thank you for shopping with us! Your order has been successfully
+          placed.
+        </p>
+      </div>
+
+      <div class="card text-center border-dark shadow mt-5 mb-5">
+        <div class="card-header">
+          <h3>Order Details</h3>
+        </div>
+
+        <div class="card-body">
+          <!-- Table Start -->
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col" class="col-2">#</th>
+                <th scope="col" class="col-4">Name</th>
+                <th scope="col" class="col-4">Item Requested</th>
+                <th scope="col" class="col-2">Number of Items</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td><p id="td_Name"></p></td>
+                <td><p id="td_itemRequested"></p></td>
+                <td><p id="td_numberOfItems"></p></td>
+              </tr>
+            </tbody>
+          </table>
+          <!-- Table End -->
+        </div>
+
+        <!-- Footer -->
+        <div class="card-footer text-body-secondary">
+          <small id="orderPlaced"></small>
+          &nbsp &nbsp &nbsp &nbsp &nbsp
+          <small id="deliveryDate"></small>
+        </div>
+        <!-- Footer End -->
+      </div>
+      <!-- Card End -->
+    </div>
+    <!-- Container End -->
+
+    <script>
+      //welcome customer to my store
+      window.alert("Welcome to Sweet Delights Bakery!");
+
+      //Asking user for their name
+      let name = prompt("Please enter your full name:");
+
+      //Validate user entering a name with letters
+      while (!name || !/^[a-zA-Z\s]+$/.test(name)) {
+        if (!name) {
+          alert("You canceled the prompt. Please enter a valid name.");
+        } else {
+          alert("Please enter a valid name with only letters.");
+        }
+        name = prompt("Please enter your full name");
+      }
+
+      document.getElementById("td_Name").innerHTML = name;
+
+      // Asking user to choose an item from my store
+      // Keep prompting the user until a valid bakery item choice (1-3) is made
+      let itemRequested;
+      let bakeryItem;
+      while (true) {
+        itemRequested = prompt(
+          "Choose one of the following bakery items\n\n1. Classic Vanilla Cupcake\n2. Chocolate Chip Cookie\n3. Buttery Croissant\n\nEnter the number corresponding to your choice:"
+        );
+        itemRequested = parseInt(itemRequested);
+
+        if (itemRequested === 1) {
+          bakeryItem = "Classic Vanilla Cupcake";
+          break;
+        } else if (itemRequested === 2) {
+          bakeryItem = "Chocolate Chip Cookie";
+          break;
+        } else if (itemRequested === 3) {
+          bakeryItem = "Buttery Croissant";
+          break;
+        } else {
+          // Displaying an alert for invalid choices
+          alert("Invalid choice. Please enter option 1-3.");
+        }
+      }
+
+      // Updating HTML element with the selected bakery item
+      document.getElementById("td_itemRequested").innerHTML = bakeryItem;
+
+      // Asking user how many items they want
+      let numberOfItems = prompt(
+        `Enter the number of ${bakeryItem}s you would like to order:`
+      );
+
+      //Validate user entering a number, only 1-99
+      while (
+        numberOfItems === null ||
+        isNaN(numberOfItems) ||
+        numberOfItems <= 0 ||
+        numberOfItems > 99
+      ) {
+        if (numberOfItems === null) {
+          alert("You canceled the prompt. Please enter a valid number.");
+        } else {
+          alert("Please choose a valid number of items between 1 and 99.");
+        }
+
+        numberOfItems = prompt(
+          `Enter the number of ${bakeryItem}s you would like to order:`
+        );
+      }
+
+      document.getElementById("td_numberOfItems").innerHTML = numberOfItems;
+
+      // Set the order and delivery dates for the customer
+      const date = new Date();
+      const orderDate = date.toLocaleDateString();
+      const deliveryDate = new Date(
+        date.getTime() + 7 * 24 * 60 * 60 * 1000
+      ).toLocaleDateString();
+
+      // Get the hours
+      const hours = date.getHours();
+
+      document.getElementById("orderPlaced").innerHTML =
+        "Order Placed On: " + orderDate;
+      document.getElementById("deliveryDate").innerHTML =
+        "Arriving On: " + deliveryDate;
+
+      //Greeting the customer based on the time of day
+      let greeting;
+      if (hours < 12) {
+        greeting = "Good morning, ";
+        document.getElementById("name").innerHTML = greeting + name + ".";
+      } else if (hours < 18) {
+        greeting = "Good afternoon, ";
+        document.getElementById("name").innerHTML = greeting + name + "!";
+      } else {
+        greeting = "Good evening, ";
+        document.getElementById("name").innerHTML = greeting + name + "!";
+      }
+    </script>
+
+    <hr />
+
+    <p>Date: 3/6/2024 &nbsp &nbsp &nbsp Created by: Juan Viruel</p>
+  </body>
+</html>
