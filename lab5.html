@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BootStrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+      crossorigin="anonymous"
+    ></script>
+    <!------------------->
+
+    <title>Lab 5</title>
+  </head>
+
+  <body>
+    <!--Jumbotron -->
+    <div class="jumbotron jumbotron-fluid text-center">
+      <div class="container">
+        <h1 class="display-4">Lab - 5</h1>
+        <p class="lead">Registration Page</p>
+      </div>
+    </div>
+    <!--End Jumbotron -->
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">CSC 225</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="lab3.html">Lab 3</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="lab3.html">Lab 4</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="lab5.html"
+                >Lab 5</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!--End Navbar -->
+
+    <!--Lab 5 content  -->
+    <main class="position-relative">
+      <!--Pageheader start-->
+      <section class="py-4 py-lg-8">
+        <div class="container">
+          <div class="row">
+            <div class="col-xl-4 offset-xl-4 col-md-12 col-12">
+              <div class="text-center">
+                <h1 class="mb-1" id="heading">Perfect Supplements</h1>
+                <p class="mb-0" id="subHeading">
+                  Discover supplements to boost immunity, increase energy,
+                  support joints, and enhance wellness. Sign up now for
+                  personalized recommendations!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--Pageheader end-->
+
+      <!--Sign up start-->
+      <section id="signUpSection">
+        <div class="container" id="container">
+          <div class="row justify-content-center mb-6" id="thirdDiv">
+            <!--  Middle -->
+            <div class="col-xl-5 col-lg-6 col-md-8 col-12" id="middle">
+              <!--  Card -->
+              <div class="card shadow-sm mb-3" id="cardForm">
+                <div class="card-body p-4">
+                  <!-- Form start -->
+                  <form class="mb-6" id="userForm" onsubmit="userDetails();">
+                    <!-- First/last name -->
+                    <div class="row g-2 mb-3">
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control form-control-lg fs-6"
+                            placeholder="First Name"
+                            name="firstName"
+                            id="firstNameInput"
+                          />
+                          <label for="firstNameInput">First Name</label>
+                        </div>
+                      </div>
+
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input
+                            type="text"
+                            class="form-control form-control-lg fs-6"
+                            placeholder="Last Name"
+                            name="lastName"
+                            id="lastNameInput"
+                          />
+                          <label for="lastNameInput">Last Name</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                      <div class="form-floating">
+                        <input
+                          type="email"
+                          id="emailInput"
+                          class="form-control form-control-lg fs-6"
+                          placeholder="Email"
+                          name="email"
+                        />
+
+                        <label for="emailInput">Email</label>
+                      </div>
+                    </div>
+
+                    <!-- Password -->
+                    <div class="mb-3">
+                      <div class="form-floating">
+                        <input
+                          type="password"
+                          id="passwordInput"
+                          class="form-control form-control-lg fs-6"
+                          placeholder="Password"
+                          name="password"
+                          title="Password must be at least 5 characters long and contain both '?' and '!' characters."
+                        />
+
+                        <label for="passwordInput">Password</label>
+                      </div>
+                    </div>
+
+                    <!-- Date of Birth -->
+                    <div class="mb-3">
+                      <div class="col-md">
+                        <div class="form-floating">
+                          <input
+                            type="date"
+                            class="form-control form-control-lg fs-6"
+                            placeholder="Date of Birth"
+                            name="dob"
+                            id="dobInput"
+                          />
+                          <label for="dobInput">Date of Birth</label>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Sign Up Button -->
+                    <button
+                      class="btn btn-primary btn-lg w-100 mb-3"
+                      type="submit"
+                    >
+                      Sign Up</button
+                    ><!-- End Button -->
+                  </form>
+                  <!-- End Form -->
+                </div>
+              </div>
+            </div>
+
+            <!-- End Middle  -->
+          </div>
+
+          <!-- Success message(Hidden)  -->
+          <div
+            class="card mb-3 col-md-6 offset-md-3 align-items-center"
+            id="success"
+            style="display: none"
+          >
+            <div class="card text-bg-success mb-3">
+              <div class="card-body text-center">
+                <h4 class="card-title">Thank you!</h4>
+                <p class="card-text">
+                  Your details has been successfully submitted.
+                </p>
+                <p class="d-inline-flex gap-1">
+                  <button
+                    class="btn btn-outline-light rounded-pill"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    View User Information
+                  </button>
+                </p>
+              </div>
+            </div>
+
+            <!-- User info  -->
+            <div class="container mb-3">
+              <!-- User button end -->
+              <div class="collapse" id="collapseExample">
+                <div class="container">
+                  <!--Displaying info-->
+                  <div class="row justify-content-center">
+                    <div class="col-4">
+                      <!-- List Start (name/email) -->
+                      <ol class="list-group">
+                        <li
+                          class="list-group-item border border-0"
+                          id="userList"
+                        >
+                          <div class="ms-2 me-auto">
+                            <div class="fw-bold text-end">Full Name</div>
+                            <p id="userFullName" class="text-end"></p>
+                          </div>
+                        </li>
+                        <li class="list-group-item border border-0">
+                          <div class="ms-2 me-auto">
+                            <div class="fw-bold text-end">Email</div>
+                            <p id="userEmail" class="text-end"></p>
+                          </div>
+                        </li>
+                      </ol>
+                    </div>
+                    <!-- List end (name/email) -->
+                    <div class="col-4">
+                      <!-- List Start (password/Date of Birth) -->
+                      <ol class="list-group">
+                        <li
+                          class="list-group-item d-flex justify-content-between align-items-start border border-0"
+                        >
+                          <div class="ms-2 me-auto">
+                            <div class="fw-bold">Password</div>
+                            <p id="userPassword"></p>
+                          </div>
+                        </li>
+                        <li
+                          class="list-group-item d-flex justify-content-between align-items-start border border-0"
+                        >
+                          <div class="ms-2 me-auto">
+                            <div class="fw-bold">Date of Birth</div>
+                            <p id="userDateOfBirth"></p>
+                          </div>
+                        </li>
+                      </ol>
+                    </div>
+                    <!-- List end (password/Date of Birth) -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End success message Section  -->
+          </div>
+          <!-- Error message(Hidden) -->
+          <div
+            class="card mb-3 col-md-6 offset-md-3 align-items-center"
+            id="error"
+            style="display: none"
+          >
+            <div class="card text-bg-danger mb-3">
+              <div class="card-body text-center">
+                <h4 class="card-title">Submission Error</h4>
+                <p class="card-text">
+                  Couldn't process your submission because your details did not
+                  meet the requirements. Please ensure all fields are filled out
+                  correctly and try again.
+                </p>
+                <p class="d-inline-flex gap-1">
+                  <a
+                    class="btn btn-outline-light rounded-pill"
+                    type="button"
+                    href="lab5.html"
+                  >
+                    Return to form
+                  </a>
+                  <button
+                    class="btn btn-outline-light rounded-pill"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseExample"
+                    aria-expanded="false"
+                    aria-controls="collapseExample"
+                  >
+                    View errors
+                  </button>
+                </p>
+              </div>
+            </div>
+
+            <!-- User error info  -->
+            <div class="container mb-3">
+              <div class="collapse" id="collapseExample">
+                <div class="container">
+                  <!--Displaying error message -->
+                  <div class="row justify-content-center">
+                    <div class="col-5">
+                      <!-- Hidden until user does not meet requirements-->
+                      <ul class="list-group list-group-flush text-center">
+                        <li
+                          class="list-group-item"
+                          id="passwordPatternError"
+                          style="display: none"
+                        ></li>
+                        <li
+                          class="list-group-item"
+                          id="allFieldsError"
+                          style="display: none"
+                        ></li>
+                        <li
+                          class="list-group-item"
+                          id="firstNameError"
+                          style="display: none"
+                        ></li>
+                        <li
+                          class="list-group-item"
+                          id="lastNameError"
+                          style="display: none"
+                        ></li>
+                        <li
+                          class="list-group-item"
+                          id="emailError"
+                          style="display: none"
+                        ></li>
+                        <li
+                          class="list-group-item"
+                          id="passwordError"
+                          style="display: none"
+                        ></li>
+                        <li
+                          class="list-group-item"
+                          id="DOBError"
+                          style="display: none"
+                        ></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Error message  -->
+        </div>
+      </section>
+      <!-- End Sign Up Section  -->
+    </main>
+
+    <script>
+      //Password must have special characters ! ?
+      function validatePasswordPattern(password) {
+        var passwordPattern = /^(?=.*[?])(?=.*[!])(?=.*[a-zA-Z]).{5,}$/;
+
+        // Testing the password against the pattern
+        return passwordPattern.test(password);
+      }
+
+      function handlePasswordPattern() {
+        var passwordInput = document.getElementById("passwordInput");
+        var password = passwordInput.value;
+        if (validatePasswordPattern(password)) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+
+      // Checking if user inputs are not empty after trimming whitespace
+      function validateFirstName(firstName) {
+        return !!firstName.trim();
+      }
+
+      function validateLastName(lastName) {
+        return !!lastName.trim();
+      }
+
+      function validateEmail(email) {
+        return !!email.trim();
+      }
+
+      function validatePassword(password) {
+        return !!password.trim();
+      }
+
+      function validateDateOfBirth(DOB) {
+        return !!DOB.trim();
+      }
+
+      function validateFormField() {
+        //Retrieving inputs from user
+        var firstNameInput = document.getElementById("firstNameInput");
+        var firstName = firstNameInput.value;
+
+        var lastNameInput = document.getElementById("lastNameInput");
+        var lastName = lastNameInput.value;
+
+        var emailInput = document.getElementById("emailInput");
+        var email = emailInput.value;
+
+        var passwordInput = document.getElementById("passwordInput");
+        var password = passwordInput.value;
+
+        var dobInput = document.getElementById("dobInput");
+        var DOB = dobInput.value;
+
+        //errors object
+        const errors = {};
+
+        // Validate All fields
+        if (
+          !validateFirstName(firstName) &&
+          !validateLastName(lastName) &&
+          !validateEmail(email) &&
+          !validatePassword(password) &&
+          !validateDateOfBirth(DOB)
+        ) {
+          errors.allFields = "All fields must be present";
+          document.getElementById("allFieldsError").innerHTML =
+            errors.allFields;
+          allFieldsError.style.display = "block";
+        }
+        // Validate first name
+        if (!validateFirstName(firstName)) {
+          errors.firstName = "First name field is empty";
+          document.getElementById("firstNameError").innerHTML =
+            errors.firstName;
+          firstNameError.style.display = "block";
+        }
+
+        // Validate last name
+        if (!validateLastName(lastName)) {
+          errors.lastName = "Last name field is empty";
+          document.getElementById("lastNameError").innerHTML = errors.lastName;
+          lastNameError.style.display = "block";
+        }
+
+        // Validate email
+        if (!validateEmail(email)) {
+          errors.email = "Email field is empty";
+          document.getElementById("emailError").innerHTML = errors.email;
+          emailError.style.display = "block";
+        }
+
+        // Validate passsword
+        if (!validatePassword(password)) {
+          errors.password = "Password field is empty";
+          document.getElementById("passwordError").innerHTML = errors.password;
+          passwordError.style.display = "block";
+        }
+
+        // Validate pasword pattern
+        if (!handlePasswordPattern()) {
+          errors.passwordPattern =
+            "Password must be at least 5 characters long and contain both '?' and '!' characters";
+          document.getElementById("passwordPatternError").innerHTML =
+            errors.passwordPattern;
+          passwordPatternError.style.display = "block";
+        }
+
+        // Validate date of birth
+        if (!validateDateOfBirth(DOB)) {
+          errors.DOB = "Date of Birth field is empty";
+          document.getElementById("DOBError").innerHTML = errors.DOB;
+          DOBError.style.display = "block";
+        }
+
+        // If user fails any validation, show the error message
+        if (Object.keys(errors).length > 0) {
+          var hiddenErrorMessage = document.getElementById("error");
+          hiddenErrorMessage.style.display = "block";
+
+          let greetingHeading = "Something Went Wrong";
+          let greetingSubHeading = "Need assistance? Contact us for help!";
+
+          document.getElementById("heading").innerHTML = greetingHeading;
+          document.getElementById("subHeading").innerHTML = greetingSubHeading;
+
+          return false;
+        } else {
+          // Otherwise show the Success message
+          var hiddenSuccessMessage = document.getElementById("success");
+          hiddenSuccessMessage.style.display = "block";
+
+          let greetingHeading = "Welcome to our community!";
+          let greetingSubHeading =
+            "We'll be reaching out to you shortly to provide personalized guidance.";
+
+          document.getElementById("heading").innerHTML = greetingHeading;
+          document.getElementById("subHeading").innerHTML = greetingSubHeading;
+
+          return true;
+        }
+      }
+
+      //Gets user details
+      function userDetails() {
+        //calling function that validates form (empty field/special characters)
+        validateFormField();
+
+        //User inputs into User object
+        var user = document.getElementById("userForm").elements;
+        var userArr = Array.from(user);
+
+        userArr.forEach((element) =>
+          console.log(element.name + " " + element.value)
+        );
+
+        // Get the container div with id "middle"
+        var middle = document.getElementById("middle");
+
+        // Remove the existing card where the form is at
+        var cardForm = document.getElementById("cardForm");
+        middle.removeChild(cardForm);
+
+        document.getElementById("userFullName").innerHTML =
+          userArr[0].value + " " + userArr[1].value;
+
+        document.getElementById("userEmail").innerHTML = userArr[2].value;
+
+        // Replacing user password with *
+        var pass = userArr[3].value;
+        var passChar = pass.length;
+        var hiddenPass = "";
+        var asterisk = "*";
+        for (i = 0; i < passChar; i++) {
+          hiddenPass = hiddenPass + asterisk;
+        }
+
+        document.getElementById("userPassword").innerHTML = hiddenPass;
+        document.getElementById("userDateOfBirth").innerHTML = userArr[4].value;
+      }
+    </script>
+
+    <hr />
+
+    <p>Date: 3/14/2024 &nbsp &nbsp &nbsp Created by: Juan Viruel</p>
+  </body>
+</html>
