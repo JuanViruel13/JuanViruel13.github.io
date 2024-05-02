@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BootStrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <title>Meal Mastermind</title>
+
+    <link href="homepage.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="header">
+      <!--Navigation bar-->
+      <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container-fluid">
+          <!-- Navbar Brand -->
+          <a
+            class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+            href="index.html"
+            >Meal Mastermind</a
+          >
+
+          <!-- Offcanvas navigation menu positioned on the right side of the viewport -->
+          <div
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavbar"
+            aria-labelledby="offcanvasNavbarLabel"
+          >
+            <!-- Offcanvas header containing the logo and close button -->
+            <div class="offcanvas-header text-black">
+              <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+                Meal Mastermind
+              </h5>
+              <button
+                type="button"
+                class="btn-close btn-close-white"
+                data-bs-dismiss="offcanvas"
+                aria-label="Close"
+              ></button>
+            </div>
+            <!-- End Offcanvas header -->
+
+            <!-- Offcanvas body -->
+            <div class="offcanvas-body">
+              <!-- Navbar Items -->
+              <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="../index.html"
+                    >Back to Portfolio</a
+                  >
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="mealPlanner.html"
+                    >Meal Planner</a
+                  >
+                </li>
+
+                <li class="nav-item">
+                  <a class="nav-link mx-lg-2" href="shoppingList.html"
+                    >Shopping List</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Button to toggle the offcanvas navigation menu -->
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#offcanvasNavbar"
+            aria-controls="offcanvasNavbar"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <!-- End Button toggle -->
+        </div>
+      </nav>
+      <!-- End top navbar -->
+
+      <!-- Meal Plan / Shopping List Section -->
+      <div class="container position-relative z-2 pt-2 pt-sm-4 pt-md-5">
+        <div class="row justify-content-center pt-5">
+          <div class="col-lg-9 col-xl-8 text-center pt-5 mt-1">
+            <!-- Call to action button -->
+            <a
+              href="mealPlanner.html"
+              class="d-inline-flex align-items-center fs-sm fw-semibold text-decoration-none bg-warning bg-opacity-10 text-warning rounded-pill py-2 px-3"
+            >
+              <span class="fw-semibold lh-sm">Start Planning Now</span>
+              <i class="bi bi-arrow-right fs-lg ms-2 me-n1"></i>
+            </a>
+            <!-- Section title -->
+            <h1 class="display-4 text-white pt-3 mt-3 mb-4">
+              Plan Your Meals,<br />
+              Manage Your Shopping
+            </h1>
+            <!-- Section description -->
+            <p class="text-white opacity-70 fs-xl">
+              Easily create your meal plans and generate your shopping list to
+              stay organized and on track with your nutritional goals.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="container py-5 my-md-2 my-lg-3 my-xl-4 my-xxl-5">
+      <div class="row align-items-center py-1 py-sm-3 py-md-4 my-lg-2">
+        <div class="col-lg-4 offset-xl-1">
+          <h2
+            class="h1 text-center text-lg-start pb-3 pb-lg-1 features-heading"
+          >
+            Our Features
+          </h2>
+
+          <ul class="list-unstyled d-none d-lg-block pb-3 mb-3 mb-lg-4">
+            <li class="d-flex pt-2">
+              <i class="bi bi-check2 fs-4 text-success mt-n1 me-2"></i>
+              Plan Meals and Recipes
+            </li>
+            <li class="d-flex pt-2">
+              <i class="bi bi-check2 fs-4 text-success mt-n1 me-2"></i>
+              Create Shopping Lists
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-lg-8 col-xl-7 col-xxl-6">
+          <div class="row row-cols-1 row-cols-sm-2">
+            <div class="col">
+              <div class="card border-0 bg-primary bg-opacity-10">
+                <div class="card-body">
+                  <i class="bi bi-calendar2 fs-1 text-primary d-block mb-3"></i>
+                  <h3 class="h4">Plan Meals and Recipes</h3>
+                  <p class="fs-sm">
+                    Easily plan your meals and recipes for the week ahead.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card border-0 bg-info bg-opacity-10">
+                <div class="card-body">
+                  <i class="bi bi-list fs-1 text-info d-block mb-3"></i>
+                  <h3 class="h4">Create Shopping Lists</h3>
+                  <p class="fs-sm">
+                    Generate shopping lists based on searching for a recipe.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Features -->
+
+    <!-- FAQ -->
+    <section class="FAQ-section mb-5">
+      <div class="container text-center">
+        <div class="row">
+          <div class="col-md-7 offset-md-3">
+            <!-- FAQ Heading -->
+            <h1 class="faq-heading">Frequently Asked Questions</h1>
+            <!-- Start accordion -->
+            <div class="accordion accordion-flush" id="accordionExample">
+              <!-- Question #1 -->
+              <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button borded"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="true"
+                    aria-controls="collapseOne"
+                  >
+                    How can I plan my meals effectively?
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse show"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body fs-sm">
+                    Effective meal planning involves selecting recipes, making a
+                    grocery list, and allocating time for meal preparation.
+                    Consider factors such as dietary preferences, nutritional
+                    balance, and available ingredients when planning your meals.
+                  </div>
+                </div>
+              </div>
+              <!-- Question #2 -->
+              <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseTwo"
+                    aria-expanded="false"
+                    aria-controls="collapseTwo"
+                  >
+                    How do I create a shopping list?
+                  </button>
+                </h2>
+                <div
+                  id="collapseTwo"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body fs-sm">
+                    Creating a shopping list involves identifying the
+                    ingredients needed for your meal plans and organizing them
+                    into categories. Consider using meal planning apps or online
+                    tools to streamline the process and ensure you don't forget
+                    any items.
+                  </div>
+                </div>
+              </div>
+              <!-- Question #3 -->
+              <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseThree"
+                    aria-expanded="false"
+                    aria-controls="collapseThree"
+                  >
+                    How can I stick to my meal plan and shopping list?
+                  </button>
+                </h2>
+                <div
+                  id="collapseThree"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body fs-sm">
+                    Sticking to your meal plan and shopping list requires
+                    discipline and organization. Consider meal prepping in
+                    advance, avoiding impulse purchases, and only buying what
+                    you need for the week. Stay flexible and make adjustments as
+                    needed, but strive to follow your plan as closely as
+                    possible.
+                  </div>
+                </div>
+              </div>
+              <!-- Question #4 -->
+              <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFour"
+                    aria-expanded="false"
+                    aria-controls="collapseFour"
+                  >
+                    How do I find recipes for meal planning?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFour"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body fs-sm">
+                    Finding recipes for meal planning can be done through
+                    various sources such as cookbooks, recipe websites, and meal
+                    planning apps. Consider your dietary preferences,
+                    nutritional needs, and available ingredients when selecting
+                    recipes to ensure they align with your goals.
+                  </div>
+                </div>
+              </div>
+              <!-- Question #5 -->
+              <div class="accordion-item mb-3">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button collapsed"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseFive"
+                    aria-expanded="false"
+                    aria-controls="collapseFive"
+                  >
+                    How can I optimize my grocery shopping for meal planning?
+                  </button>
+                </h2>
+                <div
+                  id="collapseFive"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#accordionExample"
+                >
+                  <div class="accordion-body fs-sm">
+                    Optimizing your grocery shopping for meal planning involves
+                    organizing your shopping list, shopping for ingredients in
+                    bulk when possible, and utilizing budget-friendly options.
+                    Consider shopping at farmers' markets or buying seasonal
+                    produce to save money and access fresh ingredients.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End FAQ -->
+
+    <hr />
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <p>Created by Juan Viruel</p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <p>Date: 5/1/2024</p>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- BootStrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!----------------->
+  </body>
+</html>

@@ -1,0 +1,103 @@
+body {
+  overflow-x: hidden;
+}
+
+.header {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url("backgroundImage.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.display-4 {
+  font-size: calc(1.475rem + 2.7vw);
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+/* card zoom hover effect*/
+.card{
+  transition: all 0.3s;
+}
+.card:hover{
+  transform: scale(1.15);
+}
+
+/* FAQ/Accordion component */
+
+.faq-heading,.features-heading {
+  
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333; 
+  margin-bottom: 20px;
+  
+}
+
+.accordion-button{
+  border-radius: calc(1rem * 1.125) !important;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem 1.5rem;
+  font-size: 1rem;
+  text-align: left;
+  border: 0;
+  overflow-anchor: none;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out, border-radius 0.15s ease;
+}
+
+.accordion-button:focus {
+  box-shadow: none;
+  background: #f6f9fc;
+  border-color: #576071;
+}
+
+.accordion-header{
+  margin-bottom: 0;
+}
+
+.accordion-body {
+  background-color: #f6f9fc; 
+  padding-top: 0;
+ 
+ 
+}
+
+.accordion-item{
+  border-radius: calc(1rem * 1.125) !important;
+  background-color: #f6f9fc;
+  border: 0 solid #e3e9ef;
+}
+
+
+.accordion-button::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-plus' viewBox='0 0 16 16'%3E%3Cpath d='M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4'/%3E%3C/svg%3E");
+  transition: 0.5s;
+  
+}
+
+.accordion-button:not(.collapsed)::after {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23448c74' class='bi bi-dash' viewBox='0 0 16 16'%3E%3Cpath d='M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8'/%3E%3C/svg%3E");
+  transition: 0.5s;
+}
+
+.accordion-button.collapsed {
+  background: #f6f9fc;
+  
+}
+
+.accordion-button:not(.collapsed){
+  color: #448c74;
+  background: #f6f9fc;
+}
+
+/* End FAQ section*/

@@ -1,0 +1,246 @@
+
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+body{
+  background-color: #F0F2F5;
+  font-family: 'Inter', sans-serif;
+ 
+}
+
+.navbar {
+  height: 80px;
+  padding: 0.5rem;
+}
+  
+  /* navbar brand/logo */
+  .navbar-brand {
+    font-weight: 500;
+    color: #ffffffd9;
+    font-size: 24px;
+    transition: 0.3s color;
+  }
+  
+  /* navbar toggler */
+  .navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+  }
+  
+  /* Removing box shadow and outline on focus */
+  .navbar-toggler:focus,
+  .btn-close:focus {
+    box-shadow: none;
+    outline: none;
+  }
+
+  
+  /* navbar links */
+  .nav-link {
+    color:grey;
+    font-weight: 500;
+    position: relative;
+  }
+  
+  
+  /* Navbar link hover and active styles */
+  .nav-link:hover,
+  .nav-link.active {
+    color: #fff;
+  }
+  
+  /* underline hover */
+  @media (min-width: 991px) {
+    .nav-link::before {
+      content: "";
+      position: absolute;
+      bottom: 0%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0%;
+      height: 2px;
+      background-color: #fff;
+      visibility: hidden;
+      transition: 0.3s ease-in-out;
+    }
+  
+    .nav-link:hover::before,
+    .nav-link.active::before {
+      width: 100%;
+      visibility: visible;
+    }
+  }
+  
+
+/* Bootstrap components */
+/* All bootstrap buttons */
+.btn{
+  --ar-btn-font-weight: 600;
+
+}
+
+
+/* Primary button */
+.bootstrap-primary-btn {
+  --ar-btn-color: #fff;
+  --ar-btn-hover-color: #fff;
+  --ar-btn-active-color: #fff;
+  --ar-btn-hover-bg: #316bb0;
+  --ar-btn-active-bg: #316bb0;
+  --ar-btn-hover-border-color: #316bb0;
+  --ar-btn-active-border-color: #316bb0;
+  --ar-btn-disabled-color: #fff;
+}
+
+.bootstrap-primary-btn {
+  color: var(--ar-btn-color) !important;
+  background-color: #3f7fca; 
+  border-color: var(--ar-btn-border-color) !important;
+  font-weight: var(--ar-btn-font-weight);
+}
+
+.bootstrap-primary-btn:hover {
+  color: var(--ar-btn-hover-color) !important;
+  background-color: var(--ar-btn-hover-bg) !important;
+  border-color: var(--ar-btn-hover-border-color) !important;
+}
+
+.bootstrap-primary-btn:active {
+  color: var(--ar-btn-active-color) !important;
+  background-color: var(--ar-btn-active-bg) !important;
+  border-color: var(--ar-btn-active-border-color) !important;
+}
+
+.bootstrap-primary-btn:disabled {
+  color: var(--ar-btn-disabled-color) !important;
+  border-color: var(--ar-btn-disabled-border-color) !important;
+}
+
+.bootstrap-primary-btn {
+  border-radius: calc(1rem * 0.75);
+  padding: 0.575rem 1.25rem; 
+}
+
+/* End Primary button */
+
+/* Forms */
+.form-control {
+  display: block;
+  width: 100%;
+  font-size: calc(1rem * 0.875);
+  font-weight: 400;
+  color: #576071;
+  appearance: none;
+  background-color: rgba(0,0,0,0);
+  background-clip: padding-box;
+  border: 1px solid #d7dde2;
+  border-radius: 1rem;
+  transition: border-color .15s ease-in-out;
+}
+
+.form-control:focus,.form-select:focus {
+  border-color: black;
+  box-shadow: 0 0 0 0.2rem transparent;
+} 
+
+.input-group, .input-group-text {
+  border-radius: 1rem;
+  
+}
+
+.form-check-input:checked {
+  background-color: #316bb0;
+  border-color: #316bb0;
+}
+
+.form-check-input:focus {
+  border-color: #316bb0;
+  box-shadow: 0 0 0 0.2rem transparent
+}
+
+
+/* Search bar */
+.search {
+  width: max-content;
+  display: flex;
+  align-items: center;
+  border-radius: 10px;
+  background-color: #f6f6f6;
+  width: 600px; 
+
+  /* Transition properties */
+  transition: box-shadow 0.2ms ease;
+}
+
+@media screen and (max-width: 768px) {
+  .search {
+    width: 100%; 
+    max-width: 600px; 
+  }
+}
+
+/* Smaller screens */
+@media screen and (max-width: 480px) {
+  .search {
+    max-width: 400px; 
+  }
+}
+
+.search:focus-within {
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.75);
+}
+
+.search-input::placeholder,
+.search-icon {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.form-control {
+  
+  background-color: #f6f6f6;
+  border-radius: 12px;
+  
+}
+
+.form-control:focus {
+  color: #495057;
+  background-color: #f6f6f6;
+  border-color: #fff;
+  outline: 0;
+  box-shadow: none!important;
+}
+
+.form-floating > input:not(:focus):placeholder-shown + label {
+  background: #f6f6f6;
+  border-radius: 11px;
+  font-size: 16px;
+  color: #333333;
+  
+}
+
+.form-floating > input + label:after {
+  background: #f6f6f6 !important;
+}
+
+.display-tittle{
+  font-weight: 600;
+}
+
+.calories-per-serving {
+  display: flex; 
+  justify-content: space-between; 
+  margin-top: 10px; 
+}
+
+.servings, .calories {
+  font-weight: bold; 
+  color: #007bff; 
+}
+
+.card-link:hover {
+  color: #6c757d; 
+}
+
+.form-check-input:hover {
+  cursor: pointer;
+}

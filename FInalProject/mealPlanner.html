@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- BootStrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
+      crossorigin="anonymous"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <title>Meal Planner</title>
+
+    <!-- Custom Styles -->
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <!-- Start navigation bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand me-auto ms-lg-0 ms-3 text-uppercase fw-bold"
+          href="index.html"
+        >
+          Meal Mastermind</a
+        >
+
+        <!-- Offcanvas navigation menu positioned on the right side of the viewport -->
+        <div
+          class="offcanvas offcanvas-end"
+          tabindex="-1"
+          id="offcanvasNavbar"
+          aria-labelledby="offcanvasNavbarLabel"
+        >
+          <!-- Offcanvas header containing the logo and close button -->
+          <div class="offcanvas-header bg-dark text-white">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel">
+              Meal Mastermind
+            </h5>
+            <button
+              type="button"
+              class="btn-close btn-close-white"
+              data-bs-dismiss="offcanvas"
+              aria-label="Close"
+            ></button>
+          </div>
+          <!-- End Offcanvas header -->
+
+          <!-- Offcanvas body -->
+          <div class="offcanvas-body bg-dark">
+            <ul class="navbar-nav justify-content-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-2"
+                  aria-current="page"
+                  href="index.html"
+                  >Home</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-2 active"
+                  aria-current="page"
+                  href="mealPlanner.html"
+                  >Meal Planner</a
+                >
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link mx-lg-2"
+                  aria-current="page"
+                  href="shoppingList.html"
+                  >Shopping List</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- End Offcanvas body -->
+        </div>
+
+        <!-- Button to toggle the offcanvas navigation menu -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#offcanvasNavbar"
+          aria-controls="offcanvasNavbar"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <!-- End Button toggle -->
+      </div>
+    </nav>
+    <!-- End navigation bar -->
+
+    <!-- Meal plan config Section -->
+    <section class="container py-5">
+      <div
+        class="card shadow-sm border-0 py-1 p-md-2 p-xl-3 p-xxl-4 mb-4 user-card"
+        style="border-radius: 20px"
+      >
+        <div class="card-body">
+          <div
+            class="d-flex align-items-center mt-sm-n1 pb-4 mb-0 mb-lg-1 mb-xl-3"
+          >
+            <i class="bi bi-gear lead pe-1 me-2"></i>
+            <h2 class="h4 mb-0 display-tittle">Meal Plan Configuration</h2>
+          </div>
+
+          <!-- Meal plan form -->
+          <form id="mealPlanForm">
+            <!-- Min/Max calories for each day -->
+            <div class="row mb-3">
+              <div class="col-4">
+                <!-- Number of days for the meal plan-->
+                <div class="form-floating mb-3">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="days"
+                    name="days"
+                    min="1"
+                    max="30"
+                    value="7"
+                    required
+                  />
+
+                  <label for="days">Number of days:</label>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-floating">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="minCalories"
+                    name="minCalories"
+                    min="0"
+                    required
+                  />
+
+                  <label for="minCalories"
+                    >Minimum Total Calories Per Day:</label
+                  >
+                </div>
+              </div>
+
+              <div class="col-4">
+                <div class="form-floating">
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="maxCalories"
+                    name="maxCalories"
+                    min="0"
+                    max="5000"
+                    required
+                  />
+                  <label for="maxCalories"
+                    >Maximum Total Calories Per Day:</label
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- End Min/Max calories for each day -->
+            <div class="row">
+              <div class="col-6">
+                <!-- Meals for the meal plan-->
+                <div class="form-group mb-4">
+                  <label class="mb-2">Select meals per day:</label>
+                  <div class="row">
+                    <div class="col-4">
+                      <div class="meal-option form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="breakfast"
+                          name="meals"
+                          value="Breakfast"
+                        />
+                        <label class="form-check-label" for="breakfast"
+                          >Breakfast</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="meal-option form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="lunch"
+                          name="meals"
+                          value="Lunch"
+                        />
+                        <label class="form-check-label" for="lunch"
+                          >Lunch</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="meal-option form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="dinner"
+                          name="meals"
+                          value="Dinner"
+                        />
+                        <label class="form-check-label" for="dinner"
+                          >Dinner</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Allergies -->
+                <div class="form-group mb-3">
+                  <label class="mb-2">Allergies Restrictions:</label><br />
+
+                  <div class="row">
+                    <div class="col-6">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="dairyFree"
+                          name="allergies"
+                          value="DAIRY_FREE"
+                        />
+                        <label class="form-check-label" for="dairyFree"
+                          >Dairy-Free</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="eggFree"
+                          name="allergies"
+                          value="EGG_FREE"
+                        />
+                        <label class="form-check-label" for="eggFree"
+                          >Egg-Free</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="glutenFree"
+                          name="allergies"
+                          value="GLUTEN_FREE"
+                        />
+                        <label class="form-check-label" for="glutenFree"
+                          >Gluten-Free</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="nutFree"
+                          name="allergies"
+                          value="TREE_NUT_FREE"
+                        />
+                        <label class="form-check-label" for="nutFree"
+                          >Nut-Free</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="soyFree"
+                          name="allergies"
+                          value="SOY_FREE"
+                        />
+                        <label class="form-check-label" for="soyFree"
+                          >Soy-Free</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="peanutFree"
+                          name="allergies"
+                          value="PEANUT_FREE"
+                        />
+                        <label class="form-check-label" for="peanutFree"
+                          >Peanut-Free</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End Allergies -->
+
+                <!-- Dietary preferences -->
+                <div class="form-group mb-3">
+                  <div class="row">
+                    <label class="mb-2">Dietary Preferences:</label><br />
+
+                    <div class="col-6">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="VEGETARIAN"
+                          name="diet"
+                          value="VEGETARIAN"
+                        />
+                        <label class="form-check-label" for="VEGETARIAN"
+                          >Vegetarian</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="VEGAN"
+                          name="diet"
+                          value="VEGAN"
+                        />
+                        <label class="form-check-label" for="VEGAN"
+                          >Vegan</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="NO_OIL_ADDED"
+                          name="diet"
+                          value="NO_OIL_ADDED"
+                        />
+                        <label class="form-check-label" for="NO_OIL_ADDED"
+                          >No oil added</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="MEDITERRANEAN"
+                          name="diet"
+                          value="MEDITERRANEAN"
+                        />
+                        <label class="form-check-label" for="MEDITERRANEAN"
+                          >Mediterranean</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="col-6">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="PORK_FREE"
+                          name="diet"
+                          value="PORK_FREE"
+                        />
+                        <label class="form-check-label" for="PORK_FREE"
+                          >Pork-free</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="RED_MEAT_FREE"
+                          name="diet"
+                          value="RED_MEAT_FREE"
+                        />
+                        <label class="form-check-label" for="RED_MEAT_FREE"
+                          >Red Meat-free</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="KETO_FRIENDLY"
+                          name="diet"
+                          value="KETO_FRIENDLY"
+                        />
+                        <label class="form-check-label" for="KETO_FRIENDLY"
+                          >Keto</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="ALCOHOL_FREE"
+                          name="diet"
+                          value="ALCOHOL_FREE"
+                        />
+                        <label class="form-check-label" for="ALCOHOL_FREE"
+                          >Alcohol-free</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- End dietary preferences -->
+              </div>
+
+              <!-- Other half of meal config -->
+              <div class="col-6 mt-3">
+                <div class="row">
+                  <!-- Favorite breakfast dishes -->
+                  <div class="col-4">
+                    <div class="form-group mb-3">
+                      <label for="favoriteBreakfast"
+                        >Favorite Breakfast Dishes:</label
+                      ><br />
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="pancake"
+                          name="favoriteBreakfast"
+                          value="pancake"
+                        />
+                        <label class="form-check-label" for="pancake"
+                          >Pancakes</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="egg"
+                          name="favoriteBreakfast"
+                          value="Egg"
+                        />
+                        <label class="form-check-label" for="egg">Egg</label>
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="cereals"
+                          name="favoriteBreakfast"
+                          value="Cereals"
+                        />
+                        <label class="form-check-label" for="cereals"
+                          >Cereals</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="bread"
+                          name="favoriteBreakfast"
+                          value="Bread"
+                        />
+                        <label class="form-check-label" for="bread"
+                          >Bread</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="sandwiches"
+                          name="favoriteBreakfast"
+                          value="Sandwiches"
+                        />
+                        <label class="form-check-label" for="sandwiches"
+                          >Sandwiches</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="biscuitsAndCookies"
+                          name="favoriteBreakfast"
+                          value="Biscuits and Cookies"
+                        />
+                        <label class="form-check-label" for="biscuitsAndCookies"
+                          >Biscuits and Cookies</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="sweets"
+                          name="favoriteBreakfast"
+                          value="Sweets"
+                        />
+                        <label class="form-check-label" for="sweets"
+                          >Sweets</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="pastry"
+                          name="favoriteBreakfast"
+                          value="Pastry"
+                        />
+                        <label class="form-check-label" for="pastry"
+                          >Pastry</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="piesAndTarts"
+                          name="favoriteBreakfast"
+                          value="Pies and Tarts"
+                        />
+                        <label class="form-check-label" for="piesAndTarts"
+                          >Pies and Tarts</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="drinks"
+                          name="favoriteBreakfast"
+                          value="Drinks"
+                        />
+                        <label class="form-check-label" for="drinks"
+                          >Drinks</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End favorite breakfast dishes -->
+
+                  <!-- Favorite lunch items -->
+                  <div class="col-4">
+                    <div class="form-group mb-3">
+                      <label>Favorite lunch items:</label><br />
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="pasta"
+                          name="favoriteLunch"
+                          value="pasta"
+                        />
+                        <label class="form-check-label" for="pasta"
+                          >Pasta</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="sandwiches"
+                          name="favoriteLunch"
+                          value="sandwiches"
+                        />
+                        <label class="form-check-label" for="sandwiches"
+                          >Sandwiches</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="salad"
+                          name="favoriteLunch"
+                          value="salad"
+                        />
+                        <label class="form-check-label" for="salad"
+                          >Salad</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="soup"
+                          name="favoriteLunch"
+                          value="soup"
+                        />
+                        <label class="form-check-label" for="soup">Soup</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="egg"
+                          name="favoriteLunch"
+                          value="egg"
+                        />
+                        <label class="form-check-label" for="egg">Egg</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="seafood"
+                          name="favoriteLunch"
+                          value="seafood"
+                        />
+                        <label class="form-check-label" for="seafood"
+                          >Seafood</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="desserts"
+                          name="favoriteLunch"
+                          value="desserts"
+                        />
+                        <label class="form-check-label" for="desserts"
+                          >Desserts</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="biscuitsAndCookies"
+                          name="favoriteLunch"
+                          value="biscuits and cookies"
+                        />
+                        <label class="form-check-label" for="biscuitsAndCookies"
+                          >Biscuits and Cookies</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="mainCourse"
+                          name="favoriteLunch"
+                          value="main course"
+                        />
+                        <label class="form-check-label" for="mainCourse"
+                          >Main Course</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="drinks"
+                          name="favoriteLunch"
+                          value="drinks"
+                        />
+                        <label class="form-check-label" for="drinks"
+                          >Drinks</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End favorite lunch items -->
+
+                  <!-- Favorite dinner dishes -->
+                  <div class="col-4">
+                    <div class="form-group mb-3">
+                      <label>Favorite Dinner Dishes:</label><br />
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="desserts"
+                          name="favoriteDinner"
+                          value="desserts"
+                        />
+                        <label class="form-check-label" for="desserts"
+                          >Desserts</label
+                        >
+                      </div>
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="sandwiches"
+                          name="favoriteDinner"
+                          value="sandwiches"
+                        />
+                        <label class="form-check-label" for="sandwiches"
+                          >Sandwiches</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="salad"
+                          name="favoriteDinner"
+                          value="salad"
+                        />
+                        <label class="form-check-label" for="salad"
+                          >Salad</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="soup"
+                          name="favoriteDinner"
+                          value="soup"
+                        />
+                        <label class="form-check-label" for="salad">Soup</label>
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="alcoholCocktail"
+                          name="favoriteDinner"
+                          value="alcohol cocktail"
+                        />
+                        <label class="form-check-label" for="alcoholCocktail"
+                          >Alcohol Cocktail</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="pastry"
+                          name="favoriteDinner"
+                          value="pastry"
+                        />
+                        <label class="form-check-label" for="pastry"
+                          >Pastry</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="seafood"
+                          name="favoriteDinner"
+                          value="seafood"
+                        />
+                        <label class="form-check-label" for="seafood"
+                          >Seafood</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="mainCourse "
+                          name="favoriteDinner"
+                          value="main course"
+                        />
+                        <label class="form-check-label" for="mainCourse"
+                          >Main Course</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="preserve"
+                          name="favoriteDinner"
+                          value="preserve"
+                        />
+                        <label class="form-check-label" for="preserve"
+                          >Preserve</label
+                        >
+                      </div>
+
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="drinks"
+                          name="favoriteDinner"
+                          value="drinks"
+                        />
+                        <label class="form-check-label" for="drinks"
+                          >Drinks</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <!-- End favorite dinner dishes -->
+                </div>
+              </div>
+              <!-- End half of meal config -->
+            </div>
+            <div class="text-center">
+              <button
+                type="submit"
+                class="btn btn-primary bootstrap-primary-btn"
+              >
+                Create Meal Plan
+              </button>
+            </div>
+          </form>
+          <!-- End Meal plan form -->
+        </div>
+      </div>
+    </section>
+    <!-- End Meal plan config Section -->
+
+    <!-- Meal plan display section -->
+    <section class="container py-4" id="mealPlanDisplay" style="display: none">
+      <div
+        class="card shadow-sm border-0 py-4 px-3 px-md-4 px-xl-5 px-xxl-6 mb-4 user-card"
+        style="border-radius: 20px"
+      >
+        <div class="card-body">
+          <div class="d-flex align-items-center mb-3">
+            <i class="bi bi-list-check text-primary lead pe-1 me-2"></i>
+            <h2 class="h4 mb-0 display-tittle">Meal Plan</h2>
+          </div>
+
+          <div class="row">
+            <div
+              id="loadingContainer"
+              class="col-12 d-flex align-items-center justify-content-center"
+            ></div>
+
+            <div id="recipeInfo" class="col-12"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End meal plan display section -->
+
+    <div id="errorMessage"></div>
+
+    <script src="mealPlanner.js"></script>
+
+    <!-- BootStrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
+      integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
+      crossorigin="anonymous"
+    ></script>
+    <!----------------->
+  </body>
+</html>
